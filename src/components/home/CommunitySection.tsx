@@ -8,7 +8,8 @@ const CommunitySection = () => {
                 <Row className="align-items-center">
                     <Col>
                         <h2 className="fw-bold">Join Our Global Community</h2>
-                        <p className="lead my-4 text-muted">
+                        {/* Change 1: Reduced paragraph's bottom margin */}
+                        <p className="lead mb-3 text-muted">
                             Connect with forensic investigators, security professionals, and learners from around the world.
                         </p>
                         <Image
@@ -16,12 +17,11 @@ const CommunitySection = () => {
                             rounded
                             fluid
                             style={{
-                                maxWidth: '1000px',
-                                height: '700px',
-                                width: '350px',
+                                maxWidth: '400px',
+                                height: '200px',
+                                width: '400px',
                                 objectFit: 'cover',
-                                margin: '0 auto 1rem auto',
-                                transform: 'rotate(90deg)' 
+                                margin: '20px auto'
                             }}
                         />
                         <div>
