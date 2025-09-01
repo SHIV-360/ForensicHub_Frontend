@@ -7,15 +7,24 @@ const AppNavbar = () => {
     return (
         <Navbar bg="white" expand="lg" className="shadow-sm">
             <Container>
-                <Navbar.Brand as={NavLink} to="/" className="fw-bold text-dark">
+                <Navbar.Brand 
+                    as={NavLink} 
+                    to="/" 
+                    className="fw-bold" 
+                    style={{ 
+                        color: 'var(--brand-green)',
+                        fontSize: '2rem'
+                    }}
+                >
                     ForensicHub
                 </Navbar.Brand>
+                {/* The toggle will now stay to the right */}
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 
-                {/* Change 1: Added flex-grow-1 to make this section fill available space */}
-                <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center flex-grow-1">
-                    <Nav className="align-items-center">
-                        {/* Change 2: Increased margin from mx-2 to mx-3 for better spacing */}
+                {/* Removed justify-content-center and flex-grow-1 */}
+                <Navbar.Collapse id="basic-navbar-nav">
+                    {/* ms-auto will push the nav links to the right on desktop */}
+                    <Nav className="ms-auto align-items-center">
                         <Nav.Link as={NavLink} to="/" className="mx-3">Home</Nav.Link>
                         <Nav.Link as={NavLink} to="/laws" className="mx-3">Laws</Nav.Link>
                         <Nav.Link as={NavLink} to="/case-studies" className="mx-3">Case Studies</Nav.Link>
@@ -23,12 +32,11 @@ const AppNavbar = () => {
                         <Nav.Link as={NavLink} to="/playground" className="mx-3">Playground</Nav.Link>
                         <Nav.Link as={NavLink} to="/profile" className="mx-3">Profile</Nav.Link>
                         <Nav.Link as={NavLink} to="/contact" className="mx-3">Contact</Nav.Link>
+                        
+                        {/* Moved the search icon inside the collapsed menu for better mobile layout */}
+                        <Nav.Link href="#search"><Search size={20} /></Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
-
-                <Nav>
-                    <Nav.Link href="#search"><Search size={20} /></Nav.Link>
-                </Nav>
             </Container>
         </Navbar>
     );
