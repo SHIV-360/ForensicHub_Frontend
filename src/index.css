@@ -5,10 +5,11 @@
   --brand-green: #008080;
 }
 
+/* This rule will now correctly apply to all buttons */
 .btn, .btn-lg {
-  border-radius: 50rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  border-radius: 50rem !important; 
+  padding-top: 0.25rem !important;   
+  padding-bottom: 0.25rem !important; 
 }
 
 body {

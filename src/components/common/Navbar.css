@@ -3,9 +3,11 @@
 .nav-link.active {
     background-color: var(--brand-green); /* Changed from primary to green */
     color: white !important;
-    border-radius: 0.375rem;
+    border-radius: 50rem;
     padding-left: 0.75rem !important;
     padding-right: 0.75rem !important;
+    padding-top: 0.25rem !important;   
+    padding-bottom: 0.25rem !important;
 }
 
 /* Ensure the search icon is not affected by active styles */
