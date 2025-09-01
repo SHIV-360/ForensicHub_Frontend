@@ -15,6 +15,12 @@ export const lawsData = [
         category: 'International',
     },
     {
+        title: 'TOP 10 OWAPS',
+        description: 'Understand what is OWAPS and how it was made for the cyber personnels, what are its modern value ',
+        image: placeholderImage,
+        category: 'International',
+    },
+    {
         title: 'Cybercrime Legislation',
         description: 'Laws prohibiting computer-based crimes and digital fraud.',
         image: placeholderImage,
@@ -37,6 +43,15 @@ export const caseStudiesData = [
         duration: '2 weeks',
         tools: 4,
         videos: 8,
+    },
+    {
+        title: 'AWS IAM Investigation',
+        description: 'Investigation of a cloud based attack on a Fortune 500 company.',
+        image: placeholderImage,
+        tags: ['Network Security', 'Advanced'],
+        duration: '3 weeks',
+        tools: 6,
+        videos: 12,
     },
     {
         title: 'Mobile Device Financial Fraud',

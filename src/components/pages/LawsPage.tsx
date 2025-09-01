@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Row, Col, Card, Nav, Form, InputGroup, Button } from 'react-bootstrap';
 import { Search, Megaphone, CheckCircle, Briefcase, Bookmark } from 'react-bootstrap-icons';
 import { lawsData } from '../../data/mockData';
@@ -6,6 +6,16 @@ import LawCard from '../laws/LawCard';
 import '../laws/LawsPage.css';
 
 const LawsPage: React.FC = () => {
+    const [filter, setFilter] = useState<string>("all");   // track selected filter
+    const [searchQuery, setSearchQuery] = useState<string>("");
+
+    // --- Filter logic ---
+    const filteredLaws = lawsData.filter((law) => {
+        const matchesCategory = filter === "all" || law.category.toLowerCase() === filter;
+        const matchesSearch = law.title.toLowerCase().includes(searchQuery.toLowerCase());
+        return matchesCategory && matchesSearch;
+    });
+
     return (
         <div className="bg-light">
             <Container className="py-5 laws-page">
@@ -20,6 +30,8 @@ const LawsPage: React.FC = () => {
                     <Form.Control
                         placeholder="Search laws and regulations..."
                         aria-label="Search"
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
                     />
                     <Button variant="outline-secondary">
                         <Search />
@@ -27,14 +39,15 @@ const LawsPage: React.FC = () => {
                 </InputGroup>
 
                 {/* --- Recent Legal Updates Banner --- */}
-                {/* Changed background color to brand orange */}
                 <Card 
                     className="text-white my-4 border-0 shadow-sm" 
                     style={{ backgroundColor: 'var(--brand-orange)' }}
                 >
                     <Card.Body className="d-flex justify-content-between align-items-center p-4">
                         <div>
-                            <Card.Title className="fw-bold"><Megaphone className="me-2" />Recent Legal Updates</Card.Title>
+                            <Card.Title className="fw-bold">
+                                <Megaphone className="me-2" />Recent Legal Updates
+                            </Card.Title>
                             <Card.Text>
                                 New amendments to the Digital Evidence Act effective January 2025.
                             </Card.Text>
@@ -44,8 +57,8 @@ const LawsPage: React.FC = () => {
                 </Card>
 
                 {/* --- Filter Tabs --- */}
-                <Nav variant="pills" defaultActiveKey="/all" className="mb-4">
-                    <Nav.Item><Nav.Link href="/all">All</Nav.Link></Nav.Item>
+                <Nav variant="pills" activeKey={filter} onSelect={(selectedKey) => setFilter(selectedKey || "all")} className="mb-4">
+                    <Nav.Item><Nav.Link eventKey="all">All</Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link eventKey="federal">Federal</Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link eventKey="state">State</Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link eventKey="international">International</Nav.Link></Nav.Item>
@@ -55,11 +68,14 @@ const LawsPage: React.FC = () => {
 
                 {/* --- Laws Grid --- */}
                 <Row xs={1} md={2} lg={3} className="g-4">
-                    {lawsData.map((law, index) => (
+                    {filteredLaws.map((law, index) => (
                         <Col key={index}>
                             <LawCard {...law} />
                         </Col>
                     ))}
+                    {filteredLaws.length === 0 && (
+                        <p className="text-muted"> 🚫 No Laws found for this filter.</p>
+                    )}
                 </Row>
                 
                 {/* --- Quick Access Resources --- */}
@@ -69,7 +85,7 @@ const LawsPage: React.FC = () => {
                         <Col md={4} className="mb-3">
                             <Card className="h-100 text-center p-3 border-0 shadow-sm">
                                 <Card.Body>
-                                    <Bookmark size={30} className="text-primary mb-2" />
+                                    <Bookmark size={30} style={{ color: 'var(--brand-green)' }} className="mb-2" />
                                     <h5 className="fw-bold">Legal Glossary</h5>
                                     <p className="text-muted">Definitions of key legal terms in digital forensics.</p>
                                 </Card.Body>
@@ -78,7 +94,7 @@ const LawsPage: React.FC = () => {
                         <Col md={4} className="mb-3">
                             <Card className="h-100 text-center p-3 border-0 shadow-sm">
                                 <Card.Body>
-                                    <CheckCircle size={30} className="text-success mb-2" />
+                                    <CheckCircle size={30} style={{ color: 'var(--brand-green)' }} className="mb-2" />
                                     <h5 className="fw-bold">Compliance Checker</h5>
                                     <p className="text-muted">Verify your processes against current legal standards.</p>
                                 </Card.Body>
@@ -87,7 +103,7 @@ const LawsPage: React.FC = () => {
                         <Col md={4} className="mb-3">
                             <Card className="h-100 text-center p-3 border-0 shadow-sm">
                                 <Card.Body>
-                                    <Briefcase size={30} className="text-info mb-2" />
+                                    <Briefcase size={30} style={{ color: 'var(--brand-green)' }} className="mb-2" />
                                     <h5 className="fw-bold">Case Precedents</h5>
                                     <p className="text-muted">Important court decisions shaping digital evidence.</p>
                                 </Card.Body>
