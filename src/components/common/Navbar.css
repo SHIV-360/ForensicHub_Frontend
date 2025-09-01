@@ -1,16 +1,30 @@
 /* frontend/src/components/common/Navbar.css */
 
+/* Desktop active link style */
 .nav-link.active {
-    background-color: var(--brand-green); /* Changed from primary to green */
+    background-color: var(--brand-green);
     color: white !important;
     border-radius: 50rem;
-    padding-left: 0.75rem !important;
-    padding-right: 0.75rem !important;
-    padding-top: 0.25rem !important;   
-    padding-bottom: 0.25rem !important;
+    padding: 0.25rem 0.75rem !important;
 }
 
-/* Ensure the search icon is not affected by active styles */
-.nav-link.active i {
-    color: white !important;
+
+/*
+==============================================
+MOBILE STYLES (for the collapsed menu)
+==============================================
+*/
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        margin-top: 1rem;
+    }
+
+    /* This is the key change to align ALL items to the right */
+    .navbar-nav .nav-link {
+        text-align: right;          /* Aligns the link text to the right */
+        align-self: flex-end;       /* Aligns the link container to the right */
+        width: fit-content;         /* Prevents the link from stretching full-width */
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+    }
 }
