@@ -56,13 +56,14 @@
     cursor: pointer;
 }
 
-/* --- Quick Start Section --- */
+/* --- Quick Start Section (UPDATED PADDING) --- */
 .quick-start-item {
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 1rem;
+    /* This is the change: 0.25rem top/bottom, 0.5rem left/right */
+    padding: 0.25rem 0.5rem;
     border: 1px solid #dee2e6;
     border-radius: 50rem; /* Pill shape */
     text-decoration: none;

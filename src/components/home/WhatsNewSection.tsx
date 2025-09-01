@@ -53,7 +53,7 @@ const WhatsNewSection = () => {
                             <a href="#" className="quick-start-item secondary">
                                 <Book className="me-2" /> Browse Resources
                             </a>
-                            <a href="#" className="quick-start-item secondary mt-auto">
+                            <a href="#" className="quick-start-item secondary">
                                 Join Community
                             </a>
                         </Card.Body>
