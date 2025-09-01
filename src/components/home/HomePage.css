@@ -83,13 +83,13 @@
 }
 
 .quick-start-item:hover {
-    background-color: #0b5ed7;
-    border-color: #0a58ca;
+    background-color: var(--brand-green);
+    border-color: var(--brand-green);
     color: #fff;
 }
 
 .quick-start-item.secondary:hover {
-    background-color: #6c757d;
+    background-color: var(--brand-green);
     color: #fff;
 }
 

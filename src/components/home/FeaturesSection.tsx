@@ -1,5 +1,6 @@
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import { Puzzle, Book, JournalRichtext, ShieldLock, ArrowRight } from 'react-bootstrap-icons';
+import './FeaturesSection.css';
 
 const features = [
     { icon: <Puzzle size={30} />, title: 'Interactive Challenges' },
@@ -15,7 +16,7 @@ const FeaturesSection = () => {
                 <Card.Body className="p-5">
                     <Row className="text-center mb-5">
                         <Col>
-                            <h2 className="fw-bold">Everything You Need to Excel</h2>
+                            <h2 className="fw-bold" style={{ color: 'var(--brand-green)' }}>Everything You Need to Excel</h2>
                             <p className="lead text-muted">
                                 From beginner-friendly tutorials to advanced investigation techniques, we provide the tools and knowledge for every skill level.
                             </p>
@@ -26,9 +27,15 @@ const FeaturesSection = () => {
                             <Col key={index} md={6} lg={3} className="mb-4 d-flex align-items-stretch">
                                 <Card className="w-100 text-center feature-card p-3">
                                     <Card.Body className="d-flex flex-column">
-                                        <div className="text-primary mb-3">{feature.icon}</div>
+                                        <div className="feature-icon mb-3" style={{ color: 'var(--brand-green)' }}>
+                                            {feature.icon}
+                                        </div>
                                         <Card.Title className="fw-bold fs-5">{feature.title}</Card.Title>
-                                        <a href="#" className="mt-auto text-primary text-decoration-none fw-bold">
+                                        <a 
+                                            href="#" 
+                                            className="mt-auto text-decoration-none fw-bold feature-explore-link"
+                                            style={{ color: 'var(--brand-green)' }}
+                                        >
                                             Explore <ArrowRight />
                                         </a>
                                     </Card.Body>
