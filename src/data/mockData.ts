@@ -1,8 +1,32 @@
-// frontend/src/data/mockData.ts
-
 import placeholderImage from '../assets/images/hero-bg.png';
 
-// ... (your existing lawsData array)
+// Added missing lawsData
+export const lawsData = [
+    {
+        title: 'Digital Evidence Standards',
+        description: 'Guidelines for identifying, preserving, and presenting digital evidence.',
+        image: placeholderImage,
+        category: 'Federal',
+    },
+    {
+        title: 'Privacy & Data Protection',
+        description: 'Legal frameworks protecting data handling and privacy rights.',
+        image: placeholderImage,
+        category: 'International',
+    },
+    {
+        title: 'Cybercrime Legislation',
+        description: 'Laws prohibiting computer-based crimes and digital fraud.',
+        image: placeholderImage,
+        category: 'Federal',
+    },
+    {
+        title: 'Chain of Custody',
+        description: 'Legal requirements for evidence handling and documentation.',
+        image: placeholderImage,
+        category: 'Procedural',
+    },
+];
 
 export const caseStudiesData = [
     {
@@ -30,6 +54,6 @@ export const caseStudiesData = [
         tags: ['Email Forensics', 'Beginner'],
         duration: '1 week',
         tools: 8,
-        videos: 0, // Assuming 0 for this one based on UI
+        videos: 0,
     },
 ];

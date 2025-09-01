@@ -16,7 +16,8 @@ import ContactPage from './components/pages/ContactPage';
 function App() {
   return (
     <Router>
-      <div style={{ display: 'flex', flexDirection: 'column', minHeight: '10h' }}>
+      {/* Corrected minHeight from 10h to 100vh */}
+      <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
         <AppNavbar />
         <main style={{ flex: 1 }}>
           <Routes>
