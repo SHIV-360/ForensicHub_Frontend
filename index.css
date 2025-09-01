@@ -3,7 +3,7 @@
 :root {
   --brand-primary: #0d6efd;
   --brand-orange: #fd7e14;
-  --brand-light-gray: #f0f2f5; /* A slightly different gray for the background */
+  --brand-light-gray: #f8f9fa;
 }
 
 body {
@@ -13,5 +13,5 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--brand-light-gray); /* Set the background for the whole page */
+  background-color: #fff;
 }

@@ -1,46 +1,35 @@
 // frontend/src/data/mockData.ts
 
-// You will need to add these images to your src/assets/images/ folder
-import lawImg1 from '../assets/images/law-books.jpg';
-import lawImg2 from '../assets/images/privacy.jpg';
-import lawImg3 from '../assets/images/cybercrime.jpg';
-import lawImg4 from '../assets/images/chain-of-custody.jpg';
+import placeholderImage from '../assets/images/hero-bg.png';
 
-export const lawsData = [
+// ... (your existing lawsData array)
+
+export const caseStudiesData = [
     {
-        title: 'Digital Evidence Standards',
-        description: 'Guidelines for identifying, preserving, and presenting digital evidence.',
-        image: lawImg1,
-        category: 'Federal',
+        title: 'Corporate Data Breach Investigation',
+        description: 'Investigation of a sophisticated APT attack on a Fortune 500 company.',
+        image: placeholderImage,
+        tags: ['Network Security', 'Advanced'],
+        duration: '2 weeks',
+        tools: 4,
+        videos: 8,
     },
     {
-        title: 'Privacy & Data Protection',
-        description: 'Legal frameworks protecting data handling and privacy rights.',
-        image: lawImg2,
-        category: 'International',
+        title: 'Mobile Device Financial Fraud',
+        description: 'Recovery of deleted financial records from an Android device.',
+        image: placeholderImage,
+        tags: ['Mobile Forensics', 'Intermediate'],
+        duration: '2 weeks',
+        tools: 3,
+        videos: 15,
     },
     {
-        title: 'Cybercrime Legislation',
-        description: 'Laws prohibiting computer-based crimes and digital fraud.',
-        image: lawImg3,
-        category: 'Federal',
-    },
-    {
-        title: 'Chain of Custody',
-        description: 'Legal requirements for evidence handling and documentation.',
-        image: lawImg4,
-        category: 'Procedural',
-    },
-    {
-        title: 'Expert Testimony',
-        description: 'Standards for forensic expert witness testimony.',
-        image: lawImg1, // Reusing image for example
-        category: 'Procedural',
-    },
-    {
-        title: 'International Cooperation',
-        description: 'Cross-border digital evidence sharing agreements.',
-        image: lawImg2, // Reusing image for example
-        category: 'International',
+        title: 'Email Phishing Campaign Analysis',
+        description: 'Traced the source of a targeted phishing campaign.',
+        image: placeholderImage,
+        tags: ['Email Forensics', 'Beginner'],
+        duration: '1 week',
+        tools: 8,
+        videos: 0, // Assuming 0 for this one based on UI
     },
 ];

@@ -1,5 +1,6 @@
-import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+// frontend/src/components/home/StatsSection.tsx
+
+import { Container, Row, Col, Card } from 'react-bootstrap';
 
 const stats = [
     { value: '2,500+', label: 'Active Investigators' },
@@ -8,20 +9,22 @@ const stats = [
     { value: '50+', label: 'Countries' },
 ];
 
-const StatsSection: React.FC = () => {
+const StatsSection = () => {
     return (
-        <div className="py-5 bg-white">
-            <Container>
-                <Row className="text-center">
-                    {stats.map((stat, index) => (
-                        <Col key={index} md={3} sm={6} className="mb-4 mb-md-0">
-                            <h2 className="display-5 fw-bold text-primary">{stat.value}</h2>
-                            <p className="text-muted mb-0">{stat.label}</p>
-                        </Col>
-                    ))}
-                </Row>
-            </Container>
-        </div>
+        <Container className="py-5">
+            <Row>
+                {stats.map((stat, index) => (
+                    <Col key={index} md={3} sm={6} className="mb-4 mb-md-0">
+                        <Card className="text-center shadow-sm border-0 h-100 justify-content-center py-3">
+                            <Card.Body>
+                                <h2 className="display-5 fw-bold text-primary">{stat.value}</h2>
+                                <p className="text-muted mb-0">{stat.label}</p>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                ))}
+            </Row>
+        </Container>
     );
 };
 

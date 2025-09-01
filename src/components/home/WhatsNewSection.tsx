@@ -1,59 +1,66 @@
-import React from 'react';
-import { Container, Row, Col, Card, Badge } from 'react-bootstrap';
-import { ArrowRight } from 'react-bootstrap-icons';
+// frontend/src/components/home/WhatsNewSection.tsx
 
-// Placeholder images - create these in src/assets/images/
-import whatsNewImg1 from '../../assets/images/hero-bg.png';
-import whatsNewImg2 from '../../assets/images/hero-bg.png';
-import whatsNewImg3 from '../../assets/images/hero-bg.png';
+import { Container, Row, Col, Card, Button, Badge } from 'react-bootstrap';
+import { Book, Mortarboard, PlusCircle } from 'react-bootstrap-icons';
 
-const articles = [
-    {
-        image: whatsNewImg1,
-        category: 'Quick Start',
-        title: 'Advanced Blockchain Forensics',
-    },
-    {
-        image: whatsNewImg2,
-        category: 'Guide',
-        title: 'Mobile Device Analysis Guide',
-    },
-    {
-        image: whatsNewImg3,
-        category: 'Update',
-        title: 'European GDPR Compliance Update',
-    }
+const newItems = [
+    { title: "Advanced Blockchain Forensics", type: "Expert", category: "New Challenge" },
+    { title: "Mobile Device Analysis Guide", type: "Popular", category: "Resource Update" },
+    { title: "European GDPR Compliance", type: "Important", category: "Legal Update" }
 ];
 
-const WhatsNewSection: React.FC = () => {
+const WhatsNewSection = () => {
+    // Helper to determine badge color based on type
+    const getBadgeVariant = (type: string) => {
+        switch (type) {
+            case 'Expert': return 'danger';
+            case 'Popular': return 'success';
+            case 'Important': return 'warning';
+            default: return 'secondary';
+        }
+    };
+
     return (
-        <div className="py-5 bg-white">
-            <Container>
-                <Row className="text-center mb-5">
-                    <Col>
-                        <h2 className="fw-bold">What's New</h2>
-                    </Col>
-                </Row>
-                <Row>
-                    {articles.map((article, index) => (
-                        <Col key={index} md={4} className="mb-4">
-                            <Card className="h-100 shadow-sm border-0">
-                                <Card.Img variant="top" src={article.image} />
-                                <Card.Body>
-                                    <Badge pill bg="info" className="mb-2">{article.category}</Badge>
-                                    <Card.Title className="fw-bold">{article.title}</Card.Title>
-                                </Card.Body>
-                                <Card.Footer className="bg-white border-0">
-                                    <a href="#" className="text-primary text-decoration-none fw-bold">
-                                        Explore <ArrowRight />
-                                    </a>
-                                </Card.Footer>
-                            </Card>
-                        </Col>
-                    ))}
-                </Row>
-            </Container>
-        </div>
+        <Container className="py-5">
+            <Row>
+                {/* What's New Column */}
+                <Col md={8} className="mb-4 mb-md-0">
+                    <Card className="h-100 border-0 shadow-sm">
+                        <Card.Body className="p-4">
+                            <Card.Title className="fw-bold mb-4">What's New</Card.Title>
+                            {newItems.map((item, index) => (
+                                <div key={index} className="d-flex align-items-center justify-content-between mb-3 border-bottom pb-3">
+                                    <div>
+                                        <div className="fw-bold">{item.title}</div>
+                                        <small className="text-muted">{item.category}</small>
+                                    </div>
+                                    <div className="d-flex align-items-center">
+                                        <Badge bg={getBadgeVariant(item.type)} className="me-3">{item.type}</Badge>
+                                        <PlusCircle size={20} className="text-primary" />
+                                    </div>
+                                </div>
+                            ))}
+                        </Card.Body>
+                    </Card>
+                </Col>
+
+                {/* Quick Start Column */}
+                <Col md={4}>
+                    <Card className="h-100 border-0 shadow-sm">
+                        <Card.Body className="p-4 d-flex flex-column">
+                            <Card.Title className="fw-bold mb-4">Quick Start</Card.Title>
+                            <Button variant="primary" size="lg" className="w-100 mb-3">
+                                <Mortarboard className="me-2" /> Take a Challenge
+                            </Button>
+                            <Button variant="outline-secondary" size="lg" className="w-100 mb-3">
+                                <Book className="me-2" /> Browse Resources
+                            </Button>
+                            <a href="#" className="mt-auto text-center">Join Community</a>
+                        </Card.Body>
+                    </Card>
+                </Col>
+            </Row>
+        </Container>
     );
 };
 

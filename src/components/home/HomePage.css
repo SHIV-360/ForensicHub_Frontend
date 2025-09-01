@@ -1,0 +1,37 @@
+/* frontend/src/components/home/HomePage.css */
+
+/* --- Hero Section --- */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../../assets/images/hero-bg.png');
+    background-size: cover;
+    background-position: center;
+    padding: 8rem 0; /* Adjusted padding */
+}
+
+.hero-section .brand-orange-text {
+    color: var(--brand-orange);
+}
+
+.btn-brand-orange {
+    background-color: var(--brand-orange);
+    border-color: var(--brand-orange);
+    color: #fff;
+    font-weight: bold;
+}
+
+.btn-brand-orange:hover {
+    background-color: #e66a00;
+    border-color: #e66a00;
+    color: #fff;
+}
+
+/* --- Features Section --- */
+.feature-card {
+    border: 1px solid #e9ecef; /* Light border for definition */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07) !important;
+}
