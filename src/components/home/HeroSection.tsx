@@ -1,5 +1,3 @@
-// frontend/src/components/home/HeroSection.tsx
-
 import { Container, Button } from 'react-bootstrap';
 
 const HeroSection = () => {

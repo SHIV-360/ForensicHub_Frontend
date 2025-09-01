@@ -1,5 +1,3 @@
-// frontend/src/components/home/CommunitySection.tsx
-
 import { Container, Row, Col, Button, Card, Image } from 'react-bootstrap';
 import placeholderImage from '../../assets/images/hero-bg.png';
 

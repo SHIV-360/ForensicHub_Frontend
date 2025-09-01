@@ -1,5 +1,3 @@
-// frontend/src/components/home/StatsSection.tsx
-
 import { Container, Row, Col, Card } from 'react-bootstrap';
 
 const stats = [

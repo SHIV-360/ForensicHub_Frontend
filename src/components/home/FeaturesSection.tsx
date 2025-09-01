@@ -1,5 +1,3 @@
-// frontend/src/components/home/FeaturesSection.tsx
-
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import { Puzzle, Book, JournalRichtext, ShieldLock, ArrowRight } from 'react-bootstrap-icons';
 

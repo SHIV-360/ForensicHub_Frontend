@@ -1,11 +1,9 @@
-/* frontend/src/components/home/HomePage.css */
-
 /* --- Hero Section --- */
 .hero-section {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../../assets/images/hero-bg.png');
     background-size: cover;
     background-position: center;
-    padding: 8rem 0; /* Adjusted padding */
+    padding: 8rem 0;
 }
 
 .hero-section .brand-orange-text {
@@ -27,11 +25,70 @@
 
 /* --- Features Section --- */
 .feature-card {
-    border: 1px solid #e9ecef; /* Light border for definition */
+    border: 1px solid #e9ecef;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .feature-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07) !important;
+}
+
+/* --- What's New Section --- */
+.whats-new-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e9ecef;
+    text-decoration: none;
+    color: inherit;
+    transition: background-color 0.2s ease-in-out;
+    border-radius: 0.375rem;
+}
+
+.whats-new-item:last-child {
+    border-bottom: none;
+}
+
+.whats-new-item:hover {
+    background-color: var(--brand-light-gray);
+    cursor: pointer;
+}
+
+/* --- Quick Start Section --- */
+.quick-start-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid #dee2e6;
+    border-radius: 50rem; /* Pill shape */
+    text-decoration: none;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.quick-start-item.primary {
+    background-color: var(--brand-primary);
+    border-color: var(--brand-primary);
+    color: #fff;
+}
+
+.quick-start-item.secondary {
+    background-color: transparent;
+    color: #6c757d;
+}
+
+.quick-start-item:hover {
+    background-color: #0b5ed7;
+    border-color: #0a58ca;
+    color: #fff;
+}
+
+.quick-start-item.secondary:hover {
+    background-color: #6c757d;
+    color: #fff;
 }
