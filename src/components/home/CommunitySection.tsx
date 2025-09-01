@@ -11,7 +11,19 @@ const CommunitySection = () => {
                         <p className="lead my-4 text-muted">
                             Connect with forensic investigators, security professionals, and learners from around the world.
                         </p>
-                        <Image src={placeholderImage} rounded fluid style={{ maxWidth: '400px', margin: '0 auto 2rem auto' }} />
+                        <Image
+                            src={placeholderImage}
+                            rounded
+                            fluid
+                            style={{
+                                maxWidth: '1000px',
+                                height: '700px',
+                                width: '350px',
+                                objectFit: 'cover',
+                                margin: '0 auto 1rem auto',
+                                transform: 'rotate(90deg)' 
+                            }}
+                        />
                         <div>
                             <Button size="lg" className="px-5 btn-brand-orange">Get Started Today</Button>
                         </div>
